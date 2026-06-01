@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Validator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+      width: 95%;
+      height: 120px;
+      margin-top: 10px;
+      padding: 8px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Data Validator</h1>
+
+    <p>Paste JSON data below:</p>
+
+    <textarea id="jsonInput" placeholder='[{"name":"Item 1","price":100}]'></textarea>
+
+    <br>
+    <button onclick="validateData()">Validate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function validateData() {
+      let input = document.getElementById("jsonInput").value;
+      let resultDiv = document.getElementById("result");
+
+      resultDiv.innerHTML = "";
+
+      try {
+        let data = JSON.parse(input);
+
+        if (!Array.isArray(data)) {
+          resultDiv.innerHTML = "<span class='error'>Data must be an array.</span>";
+          return;
+        }
+
+        let errors = [];
+
+        data.forEach((item, index) => {
+          if (!item.name) {
+            errors.push("Item " + (index + 1) + ": Missing name");
+          }
+
+          if (typeof item.price !== "number") {
+            errors.push("Item " + (index + 1) + ": Price must be a number");
+          }
+
+          if (item.price < 0) {
+            errors.push("Item " + (index + 1) + ": Price cannot be negative");
+          }
+        });
+
+        if (errors.length > 0) {
+          resultDiv.innerHTML = "<span class='error'>" + errors.join("<br>") + "</span>";
+        } else {
+          resultDiv.innerHTML = "<span class='success'>✅ Data is valid and ready for processing.</span>";
+        }
+
+      } catch (e) {
+        resultDiv.innerHTML = "<span class='error'>Invalid JSON format.</span>";
+      }
+    }
+  </script>
+
+</body>
+</html>

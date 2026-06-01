@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financial Scenario Simulator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 350px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .scenario {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Scenario Simulator</h1>
+
+    <input type="number" id="revenue" placeholder="Revenue">
+    <input type="number" id="costs" placeholder="Costs">
+
+    <button onclick="calculate()">Run Simulation</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      let revenue = Number(document.getElementById("revenue").value);
+      let costs = Number(document.getElementById("costs").value);
+      let resultDiv = document.getElementById("result");
+
+      if (revenue <= 0 || isNaN(revenue)) {
+        resultDiv.innerHTML = "Enter valid revenue";
+        return;
+      }
+
+      if (costs < 0 || isNaN(costs)) {
+        resultDiv.innerHTML = "Enter valid costs";
+        return;
+      }
+
+      // SCENARIO 1: Normal
+      let profit1 = revenue - costs;
+
+      // SCENARIO 2: Costs increase by 20%
+      let increasedCosts = costs * 1.2;
+      let profit2 = revenue - increasedCosts;
+
+      // SCENARIO 3: Revenue drops by 15%
+      let reducedRevenue = revenue * 0.85;
+      let profit3 = reducedRevenue - costs;
+
+      resultDiv.innerHTML =
+        "<div class='scenario'>📊 Normal Scenario: $" + profit1.toFixed(2) + "</div>" +
+        "<div class='scenario'>⚠️ Costs Increase (20%): $" + profit2.toFixed(2) + "</div>" +
+        "<div class='scenario'>📉 Revenue Drop (15%): $" + profit3.toFixed(2) + "</div>";
+    }
+  </script>
+
+</body>
+</html>
