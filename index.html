@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Zethu Mkhize: Python, AI automation and full-stack development. Explore Growth Lab, ServicePlus and selected projects.">
   <link rel="stylesheet" href="style.css">
-  <style>.hero-content > div{max-width:800px}.hero p{line-height:1.65}.project p{line-height:1.75}.project h3{line-height:1.4}.project strong{color:#f1f5f9}</style>
+  <style>.hero-content > div{max-width:800px}.hero p{line-height:1.65}.project p{line-height:1.75}.project h3{line-height:1.4}.project strong{color:#f1f5f9}.section-nav{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:20px;background:#111d32}.section-nav a{color:#cbd5e1;text-decoration:none;font-weight:600}.section-nav a:hover{color:#38bdf8}.learning-tag{display:inline-block;color:#7dd3fc;background:#0f2940;padding:6px 10px;border-radius:20px;font-size:12px;letter-spacing:.04em}.credentials{list-style:none;padding:0}.credentials li{padding:13px 0;border-bottom:1px solid #334155;line-height:1.6}.credentials small{display:block;color:#94a3b8}.project ul{line-height:1.8}.contact a{color:#7dd3fc}</style>
 </head>
 
 <body>
@@ -36,8 +36,9 @@
     </div>
   </section>
 
+  <nav class="section-nav" aria-label="Portfolio sections"><a href="#about">About</a><a href="#projects">Projects &amp; code</a><a href="#learning">Learning &amp; certifications</a><a href="#contact">Contact</a></nav>
   <!-- ABOUT -->
-  <section class="projects">
+  <section class="projects" id="about">
     <h2>About</h2>
 
     <div class="grid">
@@ -111,10 +112,41 @@
     </div>
   </section>
 
+  <section class="projects" id="learning">
+    <h2>Learning &amp; Certifications</h2>
+    <div class="grid">
+      <div class="project">
+        <span class="learning-tag">DATA ANALYTICS UPSKILLING · 2026</span>
+        <h3>Google Cloud Data Analytics</h3>
+        <p><strong>Mentor Me Collective</strong></p>
+        <p>Expanding my data analytics practice through hands-on cloud learning: working with data, exploring analytical workflows and communicating findings that support business decisions.</p>
+        <ul><li>BigQuery, SQL and analytical data preparation.</li><li>Jupyter notebooks and Dataproc Spark labs.</li><li>Data sharing with Analytics Hub, partitioning and data lineage.</li><li>Collaborative learning and project-based application.</li></ul>
+        <p>Professional development programme; listed as upskilling rather than a completed certification.</p>
+        <h3>Software Development — Zaio</h3>
+        <p>Software development qualification supporting my work in programming, application development and practical problem solving.</p>
+      </div>
+      <div class="project">
+        <span class="learning-tag">SELECTED CREDENTIALS &amp; LEARNING</span>
+        <h3>AI, cloud &amp; software development</h3>
+        <ul class="credentials">
+          <li><strong>Oracle AI Foundations Associate</strong><small>1Z0-1122-25</small></li>
+          <li><strong>Microsoft AI Fluency</strong><small>AI concepts and practical applications</small></li>
+          <li><strong>Oracle Generative AI</strong><small>Selected AI learning</small></li>
+          <li><strong>Oracle AI Vector Search</strong><small>Selected AI learning</small></li>
+          <li><strong>AWS Educate Machine Learning Foundations</strong><small>Machine learning fundamentals</small></li>
+          <li><strong>Introducing Generative AI with AWS</strong><small>Generative AI learning</small></li>
+          <li><strong>Microsoft MCP</strong><small>C# · HTML5, CSS3 and JavaScript</small></li>
+          <li><strong>Microsoft MTA</strong><small>HTML5 Application Development · Security · Software Development</small></li>
+        </ul>
+        <p>I apply this learning through the projects above, combining implementation with testing, output review and clear documentation.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <h2>Contact</h2>
-    <p>Email: zethukamkhize@gmail.com</p>
+    <p>Have an AI, automation or software development opportunity?</p><p><a href="mailto:zethukamkhize@gmail.com">zethukamkhize@gmail.com</a></p>
   </section>
 
 </body>
