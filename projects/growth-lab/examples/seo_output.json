@@ -1,0 +1,59 @@
+{
+  "project": "SEO Content Brief",
+  "mode": "Template automation - no LLM",
+  "business": "Harbour Homeware (fictional)",
+  "topic": "how to choose sustainable bedding",
+  "audience": "UK shoppers comparing bedding materials",
+  "location": "United Kingdom",
+  "goal": "Request a product consultation",
+  "keywords": [
+    "sustainable bedding",
+    "organic cotton bedding",
+    "linen bedding"
+  ],
+  "search_intent": "Informational / comparison - hypothesis to validate",
+  "title": "how to choose sustainable bedding",
+  "slug": "how-to-choose-sustainable-bedding",
+  "meta_description": "Explore how to choose sustainable bedding. Compare practical options and learn what to consider before deciding.",
+  "outline": [
+    {
+      "heading": "What to know about how to choose sustainable bedding",
+      "notes": "Define the subject for the specified audience; verify factual claims."
+    },
+    {
+      "heading": "Compare the main options",
+      "notes": "Use a comparison table and cite credible sources gathered by the author."
+    },
+    {
+      "heading": "How to choose",
+      "notes": "Address the needs of UK shoppers comparing bedding materials; avoid unsupported promises."
+    },
+    {
+      "heading": "Common questions",
+      "notes": "Answer questions confirmed through customer or search research."
+    },
+    {
+      "heading": "Next step",
+      "notes": "Offer this call to action: Request a product consultation."
+    }
+  ],
+  "editor_checklist": [
+    "Validate search intent and keywords using real research.",
+    "Check facts and add source links.",
+    "Review originality, tone and accessibility.",
+    "Add relevant internal links and a descriptive image alt text.",
+    "Review title and meta description before publication."
+  ],
+  "review_required": true,
+  "limitations": [
+    "No live keyword volumes, ranking difficulty, SERP analysis or competitor research.",
+    "Keywords are supplied by the user; no ranking or traffic outcome is claimed.",
+    "Draft only. Nothing is published."
+  ],
+  "trace": [
+    "Validate business brief",
+    "Normalize supplied keywords",
+    "Generate outline and metadata",
+    "Queue editorial review"
+  ]
+}

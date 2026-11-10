@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ServicePlus application health and incident management platform">
+  <title>ServicePlus | Service Catalogue</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="ServicePlus home">
+      <span class="brand-mark">S+</span>
+      <span>ServicePlus</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a class="nav-link active" href="#overview">Overview</a>
+      <a class="nav-link" href="#catalogue">Service catalogue</a>
+      <a class="nav-link disabled" href="#incidents" aria-disabled="true">Incidents <span>Next</span></a>
+      <a class="nav-link disabled" href="#analytics" aria-disabled="true">Analytics <span>Next</span></a>
+    </nav>
+    <div class="sidebar-note">
+      <strong>Portfolio milestone</strong>
+      <p>Service catalogue vertical slice</p>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">APPLICATION OPERATIONS</p>
+        <h1>Service health at a glance</h1>
+        <p class="subtitle">One reliable view of ownership, criticality and operational health.</p>
+      </div>
+      <button class="primary-button" id="open-dialog">+ Register service</button>
+    </header>
+
+    <section class="metrics" id="overview" aria-label="Service health summary">
+      <article class="metric-card">
+        <span>Registered services</span>
+        <strong id="total-count">0</strong>
+        <small>Across all business domains</small>
+      </article>
+      <article class="metric-card healthy">
+        <span>Healthy</span>
+        <strong id="healthy-count">0</strong>
+        <small>Operating normally</small>
+      </article>
+      <article class="metric-card warning">
+        <span>Needs attention</span>
+        <strong id="attention-count">0</strong>
+        <small>Degraded or unavailable</small>
+      </article>
+      <article class="metric-card critical">
+        <span>Critical services</span>
+        <strong id="critical-count">0</strong>
+        <small>Highest business impact</small>
+      </article>
+    </section>
+
+    <section class="panel" id="catalogue">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">SERVICE CATALOGUE</p>
+          <h2>Application landscape</h2>
+        </div>
+        <label class="search-field">
+          <span class="sr-only">Search services</span>
+          <input id="search" type="search" placeholder="Search name, owner or domain">
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Owner</th>
+              <th>Business domain</th>
+              <th>Criticality</th>
+              <th>Health</th>
+            </tr>
+          </thead>
+          <tbody id="service-rows"></tbody>
+        </table>
+        <div class="empty-state" id="empty-state" hidden>No services match your search.</div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="service-dialog">
+    <form id="service-form">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">NEW CATALOGUE ENTRY</p>
+          <h2>Register a service</h2>
+        </div>
+        <button type="button" class="icon-button" id="close-dialog" aria-label="Close">×</button>
+      </div>
+      <p class="form-intro">Add the operational details needed for ownership and health monitoring.</p>
+      <div class="form-grid">
+        <label class="full">Service name<input name="name" required maxlength="80" placeholder="e.g. Customer Notifications"></label>
+        <label>Owner<input name="owner" required maxlength="80" placeholder="Full name"></label>
+        <label>Business domain<input name="domain" required maxlength="80" placeholder="e.g. Operations"></label>
+        <label>Criticality<select name="criticality" required><option value="">Select</option><option>LOW</option><option>MEDIUM</option><option>HIGH</option><option>CRITICAL</option></select></label>
+        <label>Health status<select name="status" required><option value="HEALTHY">HEALTHY</option><option value="DEGRADED">DEGRADED</option><option value="UNAVAILABLE">UNAVAILABLE</option></select></label>
+      </div>
+      <p class="form-message" id="form-message" role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" class="secondary-button" id="cancel-dialog">Cancel</button>
+        <button type="submit" class="primary-button">Register service</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

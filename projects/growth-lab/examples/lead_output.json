@@ -1,0 +1,47 @@
+{
+  "project": "Lead Qualification",
+  "mode": "Rules demo - no LLM",
+  "company": "Harbour Homeware (fictional)",
+  "score": 100,
+  "tier": "Hot",
+  "route": "Founder review",
+  "score_evidence": [
+    {
+      "points": 25,
+      "reason": "Industry matches the demo agency target sectors."
+    },
+    {
+      "points": 20,
+      "reason": "Requested service matches the demo service catalogue."
+    },
+    {
+      "points": 25,
+      "reason": "Monthly budget is at least GBP 2,000."
+    },
+    {
+      "points": 15,
+      "reason": "Desired start is within 30 days."
+    },
+    {
+      "points": 15,
+      "reason": "The supplied record identifies a decision maker."
+    }
+  ],
+  "follow_up_questions": [
+    "What outcome would make the first 90 days successful?",
+    "What has already been tried?"
+  ],
+  "draft_reply": "Thank you for your enquiry about SEO. Could you share your primary goal and what you have tried so far? We can then assess the right next step.",
+  "review_required": true,
+  "limitations": [
+    "Budget thresholds and target sectors are illustrative, not an actual agency policy.",
+    "Inputs are user supplied and have not been independently verified.",
+    "No outreach is sent and no CRM is updated."
+  ],
+  "trace": [
+    "Validate supplied record",
+    "Apply five explicit scoring rules",
+    "Assign review queue",
+    "Prepare follow-up for human approval"
+  ]
+}
